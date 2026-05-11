@@ -24,9 +24,6 @@ public class Asignacion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "donacion_id", nullable = false)
-    private Integer donacionId;
-
     @Column(name = "necesidad_id", nullable = false)
     private Integer necesidadId;
 

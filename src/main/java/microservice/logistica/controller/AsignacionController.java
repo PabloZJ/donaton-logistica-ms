@@ -63,13 +63,6 @@ public class AsignacionController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/donacion/{donacionId}")
-    public ResponseEntity<List<Asignacion>> obtenerPorDonacion(@PathVariable Integer donacionId) {
-        List<Asignacion> lista = service.obtenerPorDonacion(donacionId);
-        if (lista.isEmpty()) return ResponseEntity.noContent().build();
-        return ResponseEntity.ok(lista);
-    }
-
     @GetMapping("/necesidad/{necesidadId}")
     public ResponseEntity<List<Asignacion>> obtenerPorNecesidad(@PathVariable Integer necesidadId) {
         List<Asignacion> lista = service.obtenerPorNecesidad(necesidadId);

@@ -34,7 +34,7 @@ public class CentroAcopioService {
         if (existente != null) {
             existente.setNombre(centro.getNombre());
             existente.setDireccion(centro.getDireccion());
-            existente.setComuna(centro.getComuna());
+            existente.setRegion(centro.getRegion());
             existente.setActivo(centro.getActivo());
 
             return repository.save(existente);
@@ -54,8 +54,8 @@ public class CentroAcopioService {
             if (centro.getDireccion() != null)
                 existente.setDireccion(centro.getDireccion());
 
-            if (centro.getComuna() != null)
-                existente.setComuna(centro.getComuna());
+            if (centro.getRegion() != null)
+                existente.setRegion(centro.getRegion());
 
             if (centro.getActivo() != null)
                 existente.setActivo(centro.getActivo());
@@ -75,8 +75,8 @@ public class CentroAcopioService {
 
     // filtros
 
-    public List<CentroAcopio> obtenerPorComuna(Integer comunaId) {
-        return repository.findByComunaId(comunaId);
+    public List<CentroAcopio> obtenerPorRegion(Integer regionId) {
+        return repository.findByRegionId(regionId);
     }
 
     public List<CentroAcopio> obtenerActivos() {

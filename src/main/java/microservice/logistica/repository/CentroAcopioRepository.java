@@ -7,7 +7,7 @@ import microservice.logistica.model.CentroAcopio;
 
 public interface CentroAcopioRepository extends JpaRepository<CentroAcopio, Integer> {
 
-    List<CentroAcopio> findByComunaId(Integer comunaId);
+    List<CentroAcopio> findByRegionId(Integer regionId);
 
     List<CentroAcopio> findByActivo(Boolean activo);
 }

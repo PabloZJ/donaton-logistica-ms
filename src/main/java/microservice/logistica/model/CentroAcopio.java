@@ -31,8 +31,8 @@ public class CentroAcopio {
     private String direccion;
 
     @ManyToOne
-    @JoinColumn(name = "comuna_id", nullable = false)
-    private Comuna comuna;
+    @JoinColumn(name = "region_id", nullable = false)
+    private Region region;
 
     @Column(nullable = false)
     private Boolean activo;

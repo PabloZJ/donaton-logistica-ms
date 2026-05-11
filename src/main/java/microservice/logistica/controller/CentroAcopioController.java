@@ -81,14 +81,10 @@ public class CentroAcopioController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/comuna/{comunaId}")
-    public ResponseEntity<List<CentroAcopio>> porComuna(@PathVariable Integer comunaId) {
-        List<CentroAcopio> lista = service.obtenerPorComuna(comunaId);
-
-        if (lista.isEmpty()) {
-            return ResponseEntity.noContent().build();
-        }
-
+    @GetMapping("/region/{regionId}")
+    public ResponseEntity<List<CentroAcopio>> porRegion(@PathVariable Integer regionId) {
+        List<CentroAcopio> lista = service.obtenerPorRegion(regionId);
+        if (lista.isEmpty()) return ResponseEntity.noContent().build();
         return ResponseEntity.ok(lista);
     }
 

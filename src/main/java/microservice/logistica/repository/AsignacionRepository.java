@@ -9,7 +9,6 @@ import microservice.logistica.model.Asignacion;
 
 @Repository
 public interface AsignacionRepository extends JpaRepository<Asignacion, Integer> {
-    List<Asignacion> findByDonacionId(Integer donacionId);
     List<Asignacion> findByNecesidadId(Integer necesidadId);
     List<Asignacion> findByResponsableUid(String responsableUid);
 }

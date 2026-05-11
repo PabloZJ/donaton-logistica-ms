@@ -31,7 +31,6 @@ public class AsignacionService {
     public Asignacion actualizar(Integer id, Asignacion asignacion) {
         Asignacion existente = asignacionRepository.findById(id).orElse(null);
         if (existente != null) {
-            existente.setDonacionId(asignacion.getDonacionId());
             existente.setNecesidadId(asignacion.getNecesidadId());
             existente.setCantidadAsignada(asignacion.getCantidadAsignada());
             existente.setFechaAsignacion(asignacion.getFechaAsignacion());
@@ -44,8 +43,6 @@ public class AsignacionService {
     public Asignacion actualizarParcial(Integer id, Asignacion asignacion) {
         Asignacion existente = asignacionRepository.findById(id).orElse(null);
         if (existente != null) {
-            if (asignacion.getDonacionId() != null) 
-                existente.setDonacionId(asignacion.getDonacionId());
             if (asignacion.getNecesidadId() != null) 
                 existente.setNecesidadId(asignacion.getNecesidadId());
             if (asignacion.getCantidadAsignada() != null) 
@@ -61,10 +58,6 @@ public class AsignacionService {
 
     public void eliminar(Integer id) {
         asignacionRepository.deleteById(id);
-    }
-
-    public List<Asignacion> obtenerPorDonacion(Integer donacionId) {
-        return asignacionRepository.findByDonacionId(donacionId);
     }
 
     public List<Asignacion> obtenerPorNecesidad(Integer necesidadId) {
